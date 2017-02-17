@@ -1,0 +1,16 @@
+<template name="layout">
+	{{> header}}
+	<br>
+	<br>
+	<br>
+	
+	{{> subheader}}
+		<div class="row">
+			<div class="col-md-3">
+				{{> sidebar}}
+			</div>
+			<div class="col-md-9">
+				{{>yield}}
+			</div>
+		</div>
+</template>

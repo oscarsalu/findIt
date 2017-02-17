@@ -15,3 +15,7 @@ Meteor.publish('places', function() {
 Meteor.publish('place', function(id) {
   return Places.find({_id: id});
 });
+Meteor.publish('categories', function() {
+	// body...
+	return Categories.find();
+})

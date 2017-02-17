@@ -1,4 +1,4 @@
-Template.home.onCreated(function() {
+Template.individual.onCreated(function() {
   L.Icon.Default.imagePath = 'packages/bevanhunt_leaflet/images/';
   this.mapRendered = false;
   this.bottomLeft = new ReactiveVar;
@@ -20,7 +20,7 @@ Template.home.onCreated(function() {
   });
 });
 
-Template.home.rendered = function () {
+Template.individual.rendered = function () {
 	// ...
 	var template =this;
 	template.autorun(function () {
@@ -30,7 +30,7 @@ Template.home.rendered = function () {
 			latitude = Session.get('location').latitude;
 			longitude = Session.get('location').longitude;
 			if (!template.mapRendered) {
-				template.map = L.map('map').setView([latitude, longitude], 15);
+				template.map = L.map('map-1').setView([latitude, longitude], 15);
 		        template.mapRendered = true;
 		        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -47,7 +47,7 @@ Template.home.rendered = function () {
 	});
 };
 
-Template.home.onRendered(function() {
+Template.individual.onRendered(function() {
   var template = this;
 
   Places.find().observeChanges({

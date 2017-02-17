@@ -1,0 +1,22 @@
+<template name="places">
+        <table class="table table-bordered">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>buttons</th>
+          </tr>
+          {{#each places}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{{getStars rating}}}</td>
+            <td><a href="/p/{{_id}}" class="btn btn-tiny btn-default">View</a><button class="btn btn-default delete_project">Rate</button></td>
+          </tr>
+          {{else}}
+          <tr>
+            <td>There are no place found</td>
+          </tr>
+          {{/each}}
+        </table>
+</template>
